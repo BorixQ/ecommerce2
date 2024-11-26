@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class AdminController extends Controller
 {
@@ -18,6 +19,16 @@ class AdminController extends Controller
         $category->category_name = $request->category;
         $category->save();
         toastr()->timeOut(10000)->closeButton()->success('Category Added Successfully');
+        return redirect()->back();
+    }
+
+    public function delete_category($id){
+        $data = Category::find($id);
+
+        $data->delete();
+       
+        toastr()->timeOut(10000)->closeButton()->success('Category Deleted Successfully');
+
         return redirect()->back();
     }
 }
