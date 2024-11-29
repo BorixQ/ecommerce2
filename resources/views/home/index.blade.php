@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body>  
   <div class="hero_area">
     <!-- header section strats -->
     @include('home.header')

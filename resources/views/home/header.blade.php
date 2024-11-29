@@ -39,7 +39,8 @@
         @auth
 
         <a href="">
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i>          
+          {{$count}}
         </a>
 
 
