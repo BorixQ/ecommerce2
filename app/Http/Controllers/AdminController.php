@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
+
+use App\Models\Order;
+
 use App\Models\Product;
 
 use Symfony\Component\VarDumper\Caster\RedisCaster;
@@ -138,5 +141,21 @@ class AdminController extends Controller
         $search = $request->search;
         $product = Product::where('title', 'LIKE', '%'.$search.'%')->orWhere('category', 'LIKE', '%'.$search.'%')->paginate(1);
         return view('admin.view_product', compact('product'));
+    }
+    public function view_orders(){
+        $data = Order::all();
+        return view('admin.order', compact('data'));
+    }
+    public function on_the_way($id){
+        $data = Order::find($id);
+        $data->status = 'On the way';
+        $data->save();
+        return redirect('/view_orders');
+    }
+    public function delivered($id){
+        $data = Order::find($id);
+        $data->status = 'Delivered';
+        $data->save();
+        return redirect('/view_orders');
     }
 }

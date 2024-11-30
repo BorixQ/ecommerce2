@@ -5,18 +5,20 @@
 
   @include('home.css')
   <style type="text/css">
-    .div_deg{
+    .div_deg {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 60px;
     }
-    table{
+
+    table {
       border: 2px solid black;
-      text-align: center;      
+      text-align: center;
       width: 800px;
     }
-    th{
+
+    th {
       border: 2px solid black;
       text-align: center;
       color: white;
@@ -24,31 +26,35 @@
       font-weight: bold;
       background-color: black;
     }
-    td{
+
+    td {
       border: 1px solid skyblue;
     }
-    .cart_value{
+
+    .cart_value {
       text-align: center;
       margin-bottom: 70px;
       padding: 18px;
     }
 
-    .order_deg{
+    .order_deg {
       padding-right: 100px;
       margin-top: -50px;
     }
-    label{
+
+    label {
       display: inline-block;
       width: 150px;
     }
-    .div_gap{
+
+    .div_gap {
       padding: 20px;
     }
   </style>
 
 </head>
 
-<body>  
+<body>
   <div class="hero_area">
     <!-- header section strats -->
     @include('home.header')
@@ -74,7 +80,7 @@
           <label>Reciever Phone</label>
           <input type="text" name="phone" value="{{Auth::user()->phone}}">
         </div>
-        
+
         <div class="div_gap">
           <input class="btn btn-primary" type="submit" value="Place Order">
         </div>
@@ -86,11 +92,12 @@
         <th>Product Title</th>
         <th>Price</th>
         <th>Image</th>
+        <th>Remove</th>
       </tr>
 
       <?php
-        $value = 0;
-      ?>      
+      $value = 0;
+      ?>
 
       @foreach($cart as $cart)
       <tr>
@@ -98,11 +105,14 @@
         <td>{{$cart->product->price}}</td>
         <td>
           <img width="150" src="/products/{{$cart->product->image}}">
-        </td>        
+        </td>
+        <td>
+          <a class="btn btn-danger" onclick="confirmation(event)">Delete</a>
+        </td>
       </tr>
 
       <?php
-        $value = $value + $cart->product->price;
+      $value = $value + $cart->product->price;
       ?>
       @endforeach
 
@@ -114,7 +124,7 @@
   </div>
   <!-- info section -->
   @include('home.footer')
-  <!-- end info section --> 
+  <!-- end info section -->
 
 </body>
 
