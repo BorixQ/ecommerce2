@@ -10,6 +10,8 @@ use App\Models\Order;
 
 use App\Models\Product;
 
+use Barryvdh\DomPDF\Facade\Pdf;
+
 use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class AdminController extends Controller
@@ -56,18 +58,20 @@ class AdminController extends Controller
         return redirect('/view_category');
     }
 
-    public function add_product(){
+    public function add_product()
+    {
         $category = Category::all();
         return view('admin.add_product', compact('category'));
     }
 
-    public function upload_product(Request $request){
+    public function upload_product(Request $request)
+    {
         $data = new Product;
 
         $data->title = $request->title;
-        
+
         $data->description = $request->description;
-        
+
         $data->price = $request->price;
 
         $data->quantity = $request->qty;
@@ -76,10 +80,10 @@ class AdminController extends Controller
 
         $image = $request->image;
 
-        if($image){
-            $imagename = time().'.'.$image->getClientOriginalExtension();
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
 
-            $request -> image -> move('products', $imagename);
+            $request->image->move('products', $imagename);
 
             $data->image = $imagename;
         }
@@ -91,16 +95,18 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function view_product(){
+    public function view_product()
+    {
         $product = Product::paginate(2);
         return view('admin.view_product', compact('product'));
     }
 
-    public function delete_product($id){
+    public function delete_product($id)
+    {
         $data = Product::find($id);
-        
-        $image_path = public_path('products/'.$data->image);
-        if(file_exists($image_path)){
+
+        $image_path = public_path('products/' . $data->image);
+        if (file_exists($image_path)) {
             unlink($image_path);
         }
 
@@ -109,24 +115,26 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function update_product($id){
+    public function update_product($id)
+    {
         $data = Product::find($id);
         $category = Category::all();
         return view('admin.update_page', compact('data', 'category'));
     }
 
-    public function edit_product(Request $request, $id){
+    public function edit_product(Request $request, $id)
+    {
         $data = Product::find($id);
         $data->title = $request->title;
         $data->description = $request->description;
         $data->price = $request->price;
         $data->quantity = $request->quantity;
         $data->category = $request->category;
-        
+
         $image = $request->image;
 
-        if($image){
-            $imagename = time().'.'.$image->getClientOriginalExtension();
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->image->move('products', $imagename);
             $data->image = $imagename;
         }
@@ -134,28 +142,38 @@ class AdminController extends Controller
         $data->save();
         toastr()->timeOut(10000)->closeButton()->success('Product Updated Successfully');
         return redirect('/view_product');
-
     }
 
-    public function product_search(Request $request){
+    public function product_search(Request $request)
+    {
         $search = $request->search;
-        $product = Product::where('title', 'LIKE', '%'.$search.'%')->orWhere('category', 'LIKE', '%'.$search.'%')->paginate(1);
+        $product = Product::where('title', 'LIKE', '%' . $search . '%')->orWhere('category', 'LIKE', '%' . $search . '%')->paginate(1);
         return view('admin.view_product', compact('product'));
     }
-    public function view_orders(){
+    public function view_orders()
+    {
         $data = Order::all();
         return view('admin.order', compact('data'));
     }
-    public function on_the_way($id){
+    public function on_the_way($id)
+    {
         $data = Order::find($id);
         $data->status = 'On the way';
         $data->save();
         return redirect('/view_orders');
     }
-    public function delivered($id){
+    public function delivered($id)
+    {
         $data = Order::find($id);
         $data->status = 'Delivered';
         $data->save();
         return redirect('/view_orders');
+    }
+
+    public function print_pdf($id)
+    {
+        $data = Order::find($id);
+        $pdf = Pdf::loadView('admin.invoice', compact('data'));
+        return $pdf->download('invoice.pdf');
     }
 }
