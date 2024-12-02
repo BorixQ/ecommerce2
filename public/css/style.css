@@ -96,6 +96,22 @@ body {
   border-radius: 5px;
 }
 
+
+/* Resaltar el enlace activo */
+.navbar-nav .nav-item.active .nav-link {
+  color: #ff5733;  /* Cambia el color a lo que prefieras */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #000; /* Color normal para los enlaces */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ff5733; /* Color en hover */
+}
+
 #navbarSupportedContent .nav-item.active .nav-link {
   background-color: #ffffff;
 }

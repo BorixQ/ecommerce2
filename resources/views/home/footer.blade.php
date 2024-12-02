@@ -20,49 +20,49 @@
       <div class="row">
         <div class="col-md-6 col-lg-3">
           <h6>
-            ABOUT US
+            Acerca de nosotros
           </h6>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Somos una tienda online de diversos productos, desde ropa, accesorios, tecnología, entre otros.
           </p>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="info_form ">
             <h5>
-              Newsletter
+              Correo Electronico
             </h5>
             <form action="#">
               <input type="email" placeholder="Enter your email">
               <button>
-                Subscribe
+                Suscribete
               </button>
             </form>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <h6>
-            NEED HELP
+            Necesitas Ayuda
           </h6>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Contactanos a través de nuestro correo electronico o número de teléfono.
           </p>
         </div>
         <div class="col-md-6 col-lg-3">
           <h6>
-            CONTACT US
+            Contactanos
           </h6>
           <div class="info_link-box">
             <a href="">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span> Gb road 123 london Uk </span>
+              <span> Calle Monterrey 208 </span>
             </a>
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>+01 12345678901</span>
+              <span>+51 966655874</span>
             </a>
             <a href="">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span> demo@gmail.com</span>
+              <span> pepestore@gmail.com</span>
             </a>
           </div>
         </div>

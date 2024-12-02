@@ -27,7 +27,7 @@ class AdminController extends Controller
         $category = new Category;
         $category->category_name = $request->category;
         $category->save();
-        toastr()->timeOut(10000)->closeButton()->success('Category Added Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Categoria Añadida Exitosamente');
         return redirect()->back();
     }
 
@@ -37,7 +37,7 @@ class AdminController extends Controller
 
         $data->delete();
 
-        toastr()->timeOut(10000)->closeButton()->success('Category Deleted Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Categoria Eliminada Exitosamente');
 
         return redirect()->back();
     }
@@ -54,7 +54,7 @@ class AdminController extends Controller
         $data = Category::find($id);
         $data->category_name =  $request->category;
         $data->save();
-        toastr()->timeOut(10000)->closeButton()->success('Category Updated Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Categoria Actualizada Exitosamente');
         return redirect('/view_category');
     }
 
@@ -90,14 +90,14 @@ class AdminController extends Controller
 
         $data->save();
 
-        toastr()->timeOut(10000)->closeButton()->success('Product Added Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Producto Añadido Exitosamente');
 
         return redirect()->back();
     }
 
     public function view_product()
     {
-        $product = Product::paginate(2);
+        $product = Product::paginate(10);
         return view('admin.view_product', compact('product'));
     }
 
@@ -111,7 +111,7 @@ class AdminController extends Controller
         }
 
         $data->delete();
-        toastr()->timeOut(10000)->closeButton()->success('Product Deleted Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Producto Eliminado Exitosamente');
         return redirect()->back();
     }
 
@@ -140,7 +140,7 @@ class AdminController extends Controller
         }
 
         $data->save();
-        toastr()->timeOut(10000)->closeButton()->success('Product Updated Successfully');
+        toastr()->timeOut(10000)->closeButton()->success('Producto Actualizado Exitosamente');
         return redirect('/view_product');
     }
 
@@ -158,14 +158,14 @@ class AdminController extends Controller
     public function on_the_way($id)
     {
         $data = Order::find($id);
-        $data->status = 'On the way';
+        $data->status = 'En camino';
         $data->save();
         return redirect('/view_orders');
     }
     public function delivered($id)
     {
         $data = Order::find($id);
-        $data->status = 'Delivered';
+        $data->status = 'Entregado';
         $data->save();
         return redirect('/view_orders');
     }

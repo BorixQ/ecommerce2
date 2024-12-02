@@ -34,7 +34,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Products
+        {{$data->title}}
         </h2>
       </div>
       <div class="row">
@@ -47,14 +47,14 @@
 
             <div class="detail-box">
               <h6>{{$data->title}}</h6>
-              <h6>Price
+              <h6>Precio (S/.)
                 <span>{{$data->price}}</span>
               </h6>
             </div>
 
             <div class="detail-box">
-              <h6>Category: {{$data->category}}</h6>
-              <h6>Available Quantity
+              <h6>Categoria: {{$data->category}}</h6>
+              <h6>Stock Disponible:
                 <span>{{$data->quantity}}</span>
               </h6>
             </div>

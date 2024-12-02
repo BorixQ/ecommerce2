@@ -8,7 +8,7 @@
                 <div class="statistic-block block">
                   <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
-                      <div class="icon"><i class="icon-user-1"></i></div><strong>New Clients</strong>
+                      <div class="icon"><i class="icon-user-1"></i></div><strong>Nuevos Clientes</strong>
                     </div>
                     <div class="number dashtext-1">{{$user}}</div>
                   </div>
@@ -21,7 +21,7 @@
                 <div class="statistic-block block">
                   <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
-                      <div class="icon"><i class="icon-contract"></i></div><strong>Total Products</strong>
+                      <div class="icon"><i class="icon-contract"></i></div><strong>Productos</strong>
                     </div>
                     <div class="number dashtext-2">{{$product}}</div>
                   </div>
@@ -34,7 +34,7 @@
                 <div class="statistic-block block">
                   <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
-                      <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>Total Order</strong>
+                      <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>Ordenes recibidas</strong>
                     </div>
                     <div class="number dashtext-3">{{$order}}</div>
                   </div>
@@ -47,7 +47,7 @@
                 <div class="statistic-block block">
                   <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
-                      <div class="icon"><i class="icon-writing-whiteboard"></i></div><strong>Tota Delivered</strong>
+                      <div class="icon"><i class="icon-writing-whiteboard"></i></div><strong>Envios entregados</strong>
                     </div>
                     <div class="number dashtext-4">{{$delivered}}</div>
                   </div>

@@ -26,7 +26,7 @@
     <div class="page-content">
       <div class="page-header">
         <div class="container-fluid">
-          <h1 style="color: white">Update Category</h1>
+          <h1 style="color: white">Actualizar Categoria</h1>
           <div class="div_deg">
 
             <form action="{{url('update_category', $data)}}" method="post">

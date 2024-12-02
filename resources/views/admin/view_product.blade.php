@@ -51,20 +51,20 @@
           <form action="{{url('product_search')}}" method="get">
             @csrf
             <input type="search" name="search">
-            <input type="submit" class="btn btn-secondary" value="Search">
+            <input type="submit" class="btn btn-secondary" value="Buscar">
           </form>
 
           <div class="div_deg">
             <table class="table_deg">
               <tr>
-                <th>Product Title</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Image</th>
-                <th>Delete</th>
-                <th>Edit</th>
+                <th>Producto</th>
+                <th>Descripcion</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Imagen</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
               </tr>
 
               @foreach($product as $products)

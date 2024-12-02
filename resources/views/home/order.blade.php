@@ -38,10 +38,10 @@
     <div class="div_center">
       <table>
         <tr>
-          <th>Product Name</th>
-          <th>Price</th>
-          <th>Delivery Status</th>
-          <th>Image</th>
+          <th>Productos</th>
+          <th>Precio</th>
+          <th>Estado de envio</th>
+          <th>Imagen</th>
         </tr>
 
         @foreach($order as $order)
@@ -50,7 +50,9 @@
           <td>{{$order->product->price}}</td>
           <td>{{$order->status}}</td>
           <td>
+          <a href="{{ url('product_details', $order->product->id) }}">
             <img height="200" src="products/{{$order->product->image}}" alt="">
+          </a>
           </td>
         </tr>
         @endforeach        

@@ -66,33 +66,33 @@
       <form action="{{url('confirm_order')}}" method="post">
         @csrf
         <div class="div_gap">
-          <label>Reciever Name</label>
+          <label>Nombre </label>
           <input type="text" name="name" value="{{Auth::user()->name}}">
         </div>
 
 
         <div class="div_gap">
-          <label>Reciever Address</label>
+          <label>Direccion de envio</label>
           <textarea name="address">{{Auth::user()->address}}</textarea>
         </div>
 
         <div class="div_gap">
-          <label>Reciever Phone</label>
+          <label>Numero</label>
           <input type="text" name="phone" value="{{Auth::user()->phone}}">
         </div>
 
         <div class="div_gap">
-          <input class="btn btn-primary" type="submit" value="Place Order">
+          <input class="btn btn-primary" type="submit" value="Realizar Pedido">
         </div>
       </form>
     </div>
 
     <table>
       <tr>
-        <th>Product Title</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th>Remove</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Retirar</th>
       </tr>
 
       <?php
@@ -107,7 +107,7 @@
           <img width="150" src="/products/{{$cart->product->image}}">
         </td>
         <td>
-          <a class="btn btn-danger" onclick="confirmation(event)">Delete</a>
+          <a class="btn btn-danger" onclick="confirmation(event)">Retirar</a>
         </td>
       </tr>
 
@@ -120,7 +120,7 @@
   </div>
 
   <div class="cart_value">
-    <h3>Total Value of Cart is: ${{$value}}</h3>
+    <h3>El total a pagar es: S/. {{$value}}</h3>
   </div>
   <!-- info section -->
   @include('home.footer')

@@ -38,15 +38,15 @@
             <div class="table_center">
               <table>
                 <tr>
-                  <th>Customer name</th>
-                  <th>Address</th>
-                  <th>Phone</th>
-                  <th>Product Title</th>
-                  <th>Price</th>
-                  <th>Image</th>
-                  <th>Status</th>
-                  <th>Change status</th>
-                  <th>Print PDF</th>
+                  <th>Cliente</th>
+                  <th>Direccion</th>
+                  <th>Telefono</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Imagen</th>
+                  <th>Estado</th>
+                  <th>Cambiar estado</th>
+                  <th>Imprimir Boleta</th>
                 </tr>
                 @foreach($data as $data)
                 <tr>
@@ -60,11 +60,11 @@
                   </td>  
                   <td>{{$data->status}}</td>  
                   <td>
-                    <a class="btn btn-primary" href="{{url('on_the_way', $data->id)}}">On the way</a>
-                    <a class="btn btn-success" href="{{url('delivered', $data->id)}}">Delivered</a>
+                    <a class="btn btn-primary" href="{{url('on_the_way', $data->id)}}">En camino</a>
+                    <a class="btn btn-success" href="{{url('delivered', $data->id)}}">Entregado</a>
                   </td>
                   <td>
-                    <a class="btn btn-secondary" href="{{url('print_pdf', $data->id)}}">Print PDF</a>
+                    <a class="btn btn-secondary" href="{{url('print_pdf', $data->id)}}">Imprimir Boleta</a>
                   </td>
                 </tr>
                 @endforeach

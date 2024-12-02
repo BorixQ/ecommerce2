@@ -48,7 +48,7 @@
     <div class="page-content">
       <div class="page-header">
         <div class="container-fluid">
-          <h1 style="color: white;">Add Category</h1>
+          <h1 style="color: white;">Añadir Categoria</h1>
           <div class="div_deg">
 
             <form action="{{url('add_category')}}" method="post">
@@ -56,7 +56,7 @@
               <div>
                 <input type="text" name="category">
 
-                <input class="btn btn-primary" type="submit" value="Add Category">
+                <input class="btn btn-primary" type="submit" value="Añadir Categoria">
               </div>
             </form>
           </div>
@@ -64,19 +64,19 @@
           <div>
             <table class="table_deg">
               <tr>
-                <th>Category Name</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Categoria</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
               </tr>
 
               @foreach($data as $data)
               <tr>
                 <td>{{ $data->category_name }}</td> 
                 <td>
-                  <a class="btn btn-success" href="{{url('edit_category', $data->id)}}">Edit</a>
+                  <a class="btn btn-success" href="{{url('edit_category', $data->id)}}">Editar</a>
                 </td>
                 <td>
-                  <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_category', $data->id)}}">Delete</a>
+                  <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_category', $data->id)}}">Eliminar</a>
                 </td>
               </tr>
               @endforeach

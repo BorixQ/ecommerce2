@@ -43,34 +43,34 @@
     <div class="page-content">
       <div class="page-header">
         <div class="container-fluid">
-          <h1 style="color: white;">Add Product</h1>
+          <h1 style="color: white;">Añadir Producto</h1>
           <div class="div_deg">
             <form action="{{url('upload_product')}}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="input_deg">
-                <label >Product Title</label>
+                <label >Producto</label>
                 <input type="text" name="title" required>
               </div>
  
               <div class="input_deg">
-                <label >Description</label>
+                <label >Descripcion</label>
                 <textarea name="description" required></textarea>
               </div>
 
               <div class="input_deg">
-                <label >Price</label>
+                <label >Precio</label>
                 <input type="text" name="price">
               </div>
 
               <div class="input_deg">
-                <label >Quantity</label>
+                <label >Stock</label>
                 <input type="number" name="qty">
               </div>
 
               <div class="input_deg">
-                <label >Product Category</label>
+                <label >Categoria</label>
                 <select name="category" required>
-                  <option>Select an option</option>
+                  <option>Escoge una categoria</option>
                   @foreach($category as $category)
                   <option value="{{$category->category_name}}">{{$category->category_name}}</option>
                   @endforeach
@@ -78,12 +78,12 @@
               </div>
 
               <div class="input_deg">
-                <label >Product Image</label>
+                <label >Imagen del producto</label>
                 <input type="file" name="image">
               </div>
 
               <div class="input_deg">
-                <input class="btn btn-success" type="submit" value="Add Product">
+                <input class="btn btn-success" type="submit" value="Añadir Producto">
               </div>
             </form>
           </div>

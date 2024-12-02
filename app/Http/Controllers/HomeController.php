@@ -12,6 +12,8 @@ use App\Models\Cart;
 
 use App\Models\Order;
 
+use App\Models\Category;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -36,6 +38,42 @@ class HomeController extends Controller
             $count = '';
         }
         return view('home.index', compact('product', 'count'));
+    }
+
+    // Método para la tienda (Shop)
+    public function shop()
+    {
+
+        // Obtener los 4 productos más recientes
+        $product = Product::latest()->take(4)->get();
+    
+        // Obtener todas las categorías
+        $categories = Category::all();
+
+        // Obtener todos los productos y agruparlos por la categoría
+        $productsGroupedByCategory = Product::all()->groupBy('category');
+
+        // Pasar ambos a la vista
+        return view('home.shop', compact('product', 'categories','productsGroupedByCategory'));
+    }
+    
+
+    // Método para "Why Us"
+    public function why()
+    {
+        return view('home.why');
+    }
+
+    // Método para Testimonial
+    public function testimonial()
+    {
+        return view('home.testimonial');
+    }
+
+    // Método para Contact Us
+    public function contact()
+    {
+        return view('home.contact');
     }
 
     public function login_home()

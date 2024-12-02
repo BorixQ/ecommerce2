@@ -8,14 +8,14 @@
                   <div class="col-md-7">
                     <div class="detail-box"> 
                       <h1>
-                        Welcome To Our <br>
-                        Gift Shop
+                        Bienvenido a  <br>
+                        Pepe's Shop
                       </h1>
                       <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                        Somos una tienda online de diversos productos, desde ropa, accesorios, tecnología, entre otros. 
                       </p>
-                      <a href="">
-                        Contact Us
+                      <a href="{{ url('/shop') }}">
+                        Vamos a Comprar
                       </a>
                     </div>
                   </div>

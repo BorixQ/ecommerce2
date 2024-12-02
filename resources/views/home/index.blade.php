@@ -27,18 +27,12 @@
   <!-- end shop section -->
 
 
-
-
-
-
-
   <!-- contact section -->
 
   @include('home.contact')
 
   <!-- end contact section -->
 
-   
 
   <!-- info section -->
 
@@ -46,8 +40,6 @@
 
   <!-- end info section -->
 
-
-  
 
 </body>
 

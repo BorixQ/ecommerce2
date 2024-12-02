@@ -7,15 +7,15 @@
 </head>
 <body>
   <center>
-    <h3>Customer name: {{$data->name}}</h3>
+    <h3>Cliente: {{$data->name}}</h3>
 
-    <h3>Customer address: {{$data->rec_address}}</h3>
+    <h3>Direccion: {{$data->rec_address}}</h3>
 
-    <h3>Phone: {{$data->phone}}</h3>
+    <h3>Telefono: {{$data->phone}}</h3>
 
-    <h2>Product title: {{$data->product->title}}</h2>
+    <h2>Producto: {{$data->product->title}}</h2>
 
-    <h2>Price: {{$data->product->price}}</h2>
+    <h2>Precio: {{$data->product->price}}</h2>
 
     <img height="250" src="products/{{$data->product->image}}">
 
